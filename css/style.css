@@ -47,7 +47,7 @@ body {
   text-transform: uppercase;
 }
 .heading_container h2 span {
-        color: #6d7bed;
+        color:  #007bff;
     }
     
 
@@ -295,7 +295,7 @@ a:focus {
       
       
       .btn-read-more {
-        background: linear-gradient(to bottom, #7964ed 0%, #31f1f1 100%);
+        background: #007bff;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -604,7 +604,7 @@ a:focus {
 
 /* footer section*/
 .footer_section {
-        background: linear-gradient(70deg, rgb(126, 103, 207) 0%, rgb(26, 202, 251) 67%);
+        background:linear-gradient(70deg, rgb(126, 103, 207) 0%, rgb(26, 202, 251) 67%);
         padding: 10px;
         font-weight: 400;
     }
@@ -628,12 +628,17 @@ a:focus {
     .fsection {
         line-height: 2rem;
     }
-    .copyrights {
+    .copyrights  {
         background-color:(70deg, rgb(126, 103, 207) 0%, rgb(26, 202, 251) 67%);
         padding: 10px 30px;
         color: white;
         border-top: 1px solid #ddd;
     }
+
+    .copyrights p {
+        color: white;
+}
+
     
     .social-icons {
         display: flex;
