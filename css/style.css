@@ -181,6 +181,28 @@ a:focus {
           box-shadow: none;
 }
 
+
+.login-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: transparent; /* You can change the color to suit your design */
+        color: #fff; /* Text color */
+        transition: background-color 0.3s ease;
+    }
+    
+    .login-btn:hover {
+        font-weight: bold;        
+}
+    
+    .login-btn i {
+        margin-right: 8px; /* Adjust the space between icon and text */
+    }
+    
+
 .user_option {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -217,7 +239,8 @@ a:focus {
 }
 
 .navbar-brand span img {
-        width: 150px;
+        margin-left: 20px;
+        width: 200px;
 }
 
 .custom_nav-container {

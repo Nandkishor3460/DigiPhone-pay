@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+        animation: slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333333;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus {
+        border-color: #4caf50;
+    }
+
+    input[type="submit"],
+    .login-btn {
+        background-color: #50c3ed;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    input[type="submit"]:hover,
+    .login-btn:hover {
+        background-color: #18b0de;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .container {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <img src="images/JPG.jpg" alt="Logo" style="width: 100%;">
+    </div>
+    <h2>Registration</h2>
+    <form action="#">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <input type="email" placeholder="Email" required>   
+    </form>
+
+    <input type="submit" value="Register">
+    <SPAn> OR </SPAn>
+    <a href="login.html" class="login-btn">Login</a>
+</div>
+</body>
+</html>
