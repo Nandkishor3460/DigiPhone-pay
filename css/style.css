@@ -274,17 +274,20 @@ a:focus {
         cursor: pointer;
         border: 2px solid rgb(233, 232, 232);
         border-radius: 20px;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
       }
       
       .card:hover {
-        transform: scale(1.05);
-        box-shadow: 5px 5px rgb(233, 232, 232);
-      }
+        transform: scale(1.03); /* Slightly smaller scale for a subtle effect */
+        box-shadow: 0 ; /* A more pronounced shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    }
+    
       
       .hover-zoom:hover {
         transform: scale(1.05);
       }
-      
+
       .hover-zoom {
         transition: transform 0.3s;
       }
@@ -305,13 +308,6 @@ a:focus {
         display: inline-block;
         transition: background 0.3s;
       }
-
-
-
-      
-      
-
-
 
 /*end header section*/
 .slider_section {

@@ -43,10 +43,25 @@
                 -webkit-box-direction: normal;
                 -ms-flex-direction: column;
                 flex-direction: column;
-                background-image: url("https://payplex.in/wp-content/uploads/2022/01/about-Us-background.jpg");
+                background-image: url("../images/about-Us-background.jpg");
                 background-size: cover;
                 background-attachment: fixed;
         }
+
+
+        @media screen and (max-width: 768px) {
+    /* Apply styles for screens smaller than or equal to 768px */
+    .hero {
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Apply styles for screens smaller than or equal to 576px */
+    .hero {
+        height: 30vh;
+    }
+}
 
 
         .About {
@@ -99,17 +114,19 @@
         }
 
         .form {
-                background-color: #555;
-                max-height: 80vh;
-                padding: 25px 40px;
-                border-radius: 20px;
-                background-color: rgb(78, 171, 207);
-        }
+    background-color: #fff; /* Change background color to white */
+    max-height: 80vh;
+    padding: 25px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Use rgba for border color to add transparency */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle shadow effect */
+}
+
 
         .col-md-8 .form-group input,
         .col-md-8 .form-group select,
         .col-md-8 .form-group textarea {
-                background-color: #d5d5d5d6;
+                background-color:#fff;
         }
 
 
@@ -255,7 +272,7 @@
 
                 <div class="col-md-6">
                         <div class="img">
-                                <img src="/images/contact-us.png" alt="">
+                                <img src="../images/contact-us.png" alt="">
                         </div>
                 </div>
 
