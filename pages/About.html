@@ -27,6 +27,7 @@
         <link href="../css/style.css" rel="stylesheet" />
         <!-- responsive style -->
         <link href="../css/responsive.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- icon -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -34,53 +35,51 @@
 </head>
 
 <style>
+    /* Base styles */
+    .hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/about-Us-background.jpg");
+    background-size: 100% auto; /* Make the background image responsive */
+    background-attachment: fixed;
+}
+
+
+
+    .About {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        color: white;
+    }
+
+    .About h2 {
+        margin-top: 100px;
+    }
+
+    .About a {
+        text-decoration: none;
+        color: #ffffff;
+        margin: 10px 15px;
+        justify-content: space-between;
+    }
+
+    .About a:hover {
+        color: #555;
+    }
+
+    /* Media queries for mobile responsiveness */
+    @media (max-width: 767px) {
         .hero {
-                height: 60vh;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                flex-direction: column;
-                background-image: url("../images/about-Us-background.jpg");
-                background-size: cover;
-                background-attachment: fixed;
-        }
-
-
-        .About {
-                text-align: center;
-                /* Center-align text */
-                justify-content: center;
-                /* Center content horizontally */
-                align-items: center;
-                /* Center content vertically */
-                flex-wrap: wrap;
-                /* Allow content to wrap */
-                color: white;
+            height: 100vh; /* Adjust height for smaller devices */
         }
 
         .About h2 {
-                margin-top: 100px;
-                /* Add some bottom margin to the heading */
+            margin-top: 50px; /* Adjust margin for smaller devices */
         }
-
-        .About a {
-                text-decoration: none;
-                /* Remove default underline */
-                color: #ffffff;
-                /* Set link color */
-                margin: 10px 15px;
-                justify-content: space-between;
-        }
-
-        .About a:hover {
-                color: #555;
-                /* Change link color on hover */
-        }
-
-
+    }
 
         /* secand */
 
@@ -88,6 +87,7 @@
         .second_section {
                 padding: 20px;
                 background-color: #f9f9f9;
+                display: flex;
         }
 
         /* Style for the flex container */
@@ -99,14 +99,18 @@
         /* Style for the left column */
         .col-md-6 {
                 width: 60%;
+                text-align: center;
                 /* Adjust width as needed */
         }
 
         /* Style for the image column */
-        .col-md-2 {
-                width: 20%;
+        .col-md-2 img {
+                width: 100%;
                 /* Adjust width as needed */
         }
+
+
+ 
 
 
 
@@ -159,7 +163,7 @@
 }
 
 /* Style for the paragraphs */
-p {
+ p {
     color: #666;
     line-height: 1.6;
     margin-bottom: 15px;
@@ -175,6 +179,30 @@ p {
         color: white;
 }
 
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 767px) {
+    .hero {
+        height: 100vh; /* Adjust height for smaller devices */
+    }
+
+    .About h2 {
+        margin-top: 50px; /* Adjust margin for smaller devices */
+    }
+
+    /* Adjusting second section */
+    .second_section .col-md-6,
+    .second_section .col-md-2 {
+        width: 100%; /* Adjusting column width for smaller devices */
+    }
+
+    /* Adjusting third section */
+    .third_section .col-md-6 {
+        flex-basis: 100%; /* Adjusting column width for smaller devices */
+    }
+}
+
+
 </style>
 
 <body>
@@ -182,94 +210,74 @@ p {
 
         <div class="hero">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <div class="col-md-8 d-flex">
-                                <a class="nav-link" href="tel:+919199096920">
-                                        <i class="fa fa-phone"></i> +91 9199096920
-                                </a>
-                                <a class="nav-link" href="mailto:support@DIGI PHONE PAY.in">
-                                        <i class="fa fa-envelope"></i> support@DIGI PHONE PAY.in
-                                </a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                <ul class="navbar-nav">
-                                        <li class="nav-item active">
-                                                <a class="nav-link" href="#">Franchise</a>
-                                        </li>
-                                        <li class="nav-item">
-                                                <a class="nav-link" href="#">Blog & Career</a>
-                                        </li>
-                                        <li class="nav-item">
-                                                <a class="nav-link" href="#">Download App</a>
-                                        </li>
+                        <div class="container">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                    
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-                                        <li class="nav-item">
-                                                <a class="nav-link login-btn" href="#">
-                                                    <i class="fas fa-sign-in-alt"></i> Login
-                                                </a>
-                                            </li>
+                                <div class="col-md-8 d-flex">
+                                        <a class="nav-link" href="tel:+919199096920">
+                                            <i class="fa fa-phone"></i> +91 9199096920
+                                        </a>
+                                        <a class="nav-link" href="mailto:support@DIGI PHONE PAY.in">
+                                            <i class="fa fa-envelope"></i> support@DIGI PHONE PAY.in
+                                        </a>
+                                    </div>
+                                <ul class=" col-md-8 navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Franchise</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Blog & Career</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Download App</a>
+                                    </li>
+                                    <a class="nav-link login-btn" href="../login.html">
+                                        <i class="fas fa-sign-in-alt"></i> Login
+                                    </a>
                                 </ul>
+                            </div>
                         </div>
-
-                </nav>
+                 </nav>
+                    
 
 
                 <!-- header section strats -->
                 <header class="header_section">
                         <div class="container-fluid">
-                                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                                        <a class="navbar-brand" href="index.html">
-                                                <span>
-                                                        <img src="../images/JPG.jpg"
-                                                                alt="">
-                                                </span>
-                                        </a>
-                                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                                data-target="#navbarSupportedContent"
-                                                aria-controls="navbarSupportedContent" aria-expanded="false"
-                                                aria-label="Toggle navigation">
-                                                <span class="navbar-toggler-icon"></span>
-                                        </button>
-
-                                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                                <div
-                                                        class=" d-flex ml-auto flex-column flex-lg-row align-items-center text-dark">
-                                                        <ul class="navbar-nav">
-                                                                <li class="nav-item ">
-                                                                        <a class="nav-link" href="../index.html">Home <span
-                                                                                        class="sr-only">(current)</span></a>
-                                                                </li>
-
-                                                                <li class="nav-item active ">
-                                                                        <a class="nav-link"
-                                                                                href="pages/About.html">About Us</a>
-                                                                </li>
-                                                                <li class="nav-item dropdown">
-                                                                        <a class="nav-link" href="../pages/Services.html">Our Services</a>
-                                                                        <!-- <div class="dropdown-content">
-                                                                                <a href="#">Banking Service</a>
-                                                                                <a href="#">Selft Service Kiosk & ATM Manufacture </a>
-                                                                                <a href="#">White Label ATM </a>
-                                                                                <a href="#">Government Service  </a>
-                                                                                <a href="#">Travel Service  </a>
-                                                                                <a href="#">Insurance </a>
-                                                                                <a href="#">Loan Service </a>
-                                                                                <a href="#">Taxation </a>
-                                                                                <a href="#">Tekephony </a>
-                                                                                <a href="#">B2C Servic  </a>
-                                                                                <a href="#">Education  </a>   
-                                                                        </div> -->
-                                                                </li>
-
-                                                                <li class="nav-item ">
-                                                                        <a class="nav-link" href="../pages/contact.html">Contact Us</a>
-                                                                </li>
-
-
-                                                </div>
-                                        </div>
-                                </nav>
+                            <nav class="navbar navbar-expand-lg custom_nav-container">
+                                <a class="navbar-brand" href="index.html">
+                                    <span>
+                                        <img src="../images/JPG.jpg" alt="">
+                                    </span>
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                    
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav ml-auto"> <!-- Moved ml-auto class to ul element -->
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/About.html">About Us</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="pages/Services.html">Our Services</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/contact.html">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
                         </div>
-                </header>
+                    </header>
 
 
 
@@ -316,7 +324,7 @@ p {
                                         biggest payment solution provider in the country.
                                 </p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-6">
                                 <img src="../images/About_us.1.jpg"
                                         alt="">
                         </div>
@@ -380,6 +388,7 @@ p {
                                 </div>
                         </div>
                 </div>
+
         </div>
 
 
@@ -512,8 +521,11 @@ p {
 
 
         </script>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/bootstrap.js"></script>
 
 
 </body>
+
 
 </html>

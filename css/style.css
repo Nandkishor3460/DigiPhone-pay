@@ -63,8 +63,6 @@ body {
 }
 
 /*header section*/
-
-
 .dropdown-content {
         display: none;
         position: absolute;
@@ -145,6 +143,23 @@ body {
   font-size: 15px;
 }
 
+
+
+
+    /* Media queries for mobile responsiveness */
+    @media (max-width: 991px) {
+        .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+            margin: 10px 15px; /* Adjust margin for smaller devices */
+            font-size: 14px; /* Adjust font size for smaller devices */
+        }
+    }
+
+    @media (max-width: 767px) {
+        .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
+            margin: 8px 10px; /* Further adjust margin for even smaller devices */
+            font-size: 13px; /* Further adjust font size for even smaller devices */
+        }
+    }
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link::after {
   display: none;
   content: "";
@@ -233,6 +248,8 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+
+  
       -ms-flex-align: center;
           align-items: center;
   position: relative;
@@ -257,57 +274,102 @@ a:focus {
   background-size: 55px;
 }
 
+
+    .navbar-toggler-icon::before {
+        content: "\2630"; /* Unicode for the typical hamburger icon */
+        color: rgb(20, 19, 19); /* Change the color to whatever you want */
+    }
+
+
 /* use section */
 
 .card_section {
-        background: linear-gradient(to bottom, #f4f4f4 0%, #007bff 100%); /* Example gradient colors */
-        padding: 40px 0; /* Add padding for spacing */
+        background: linear-gradient(to bottom, #f4f4f4 0%, #007bff 100%);
+        padding: 20px 0; /* Adjusted padding for smaller screens */
       }
       
       .card_section .card-body {
-        margin-bottom: 20px; /* Add margin between sections */
+        margin-bottom: 10px; /* Adjusted margin for smaller screens */
       }
       
-.card {
-        margin-top: 20px;
+      .card {
+        margin-top: 10px; /* Adjusted margin for smaller screens */
         transition: transform 0.3s, box-shadow 0.3s;
         cursor: pointer;
-        border: 2px solid rgb(233, 232, 232);
-        border-radius: 20px;
-        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgb(233, 232, 232); /* Reduced border thickness */
+        border-radius: 10px; /* Reduced border radius */
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
+      }
+
+      @media only screen and (max-width: 768px) {
+        .card {
+          margin-top: 5px; /* Adjusted margin for smaller screens */
+          border: 1px solid rgb(233, 232, 232); /* Reduced border thickness */
+          border-radius: 8px; /* Reduced border radius */
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
+        }
       }
       
+      
       .card:hover {
-        transform: scale(1.03); /* Slightly smaller scale for a subtle effect */
-        box-shadow: 0 ; /* A more pronounced shadow */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    }
-    
+        transform: scale(1.03);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjusted box shadow on hover */
+      }
       
       .hover-zoom:hover {
         transform: scale(1.05);
       }
-
+      
       .hover-zoom {
         transition: transform 0.3s;
       }
-
-      .card-body i {
-        color: #007bff; /* Change the color to your desired color */
-      }
       
+      .card-body i {
+        color: #007bff;
+      }
       
       .btn-read-more {
         background: #007bff;
         color: white;
         border: none;
-        padding: 10px 20px;
-        margin: 10px 40px;
+        padding: 8px 16px; /* Adjusted padding for smaller screens */
+        margin: 10px 20px; /* Adjusted margin for smaller screens */
         border-radius: 5px;
         text-decoration: none;
         display: inline-block;
         transition: background 0.3s;
       }
+      
+      @media only screen and (max-width: 768px) {
+        .btn-read-more {
+          padding: 6px 12px; /* Further adjusted padding for smaller screens */
+          margin: 10px 10px; /* Further adjusted margin for smaller screens */
+        }
+      }
+      
+
+
+      .custom_nav-container .navbar-nav .nav-item .nav-link {
+        margin: 10px 15px; /* Adjusted margin for better spacing */
+        padding: 10px 15px; /* Adjusted padding for better touchability */
+        color: #000000;
+        text-align: center;
+        position: relative;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+    
+    .custom_nav-container .navbar-nav .nav-item .nav-link::after {
+        display: none; /* Removed the underline effect for all screen sizes */
+    }
+    
+    @media (max-width: 991.98px) {
+        .custom_nav-container .navbar-nav .nav-item .nav-link {
+            margin: 10px; /* Adjusted margin for better spacing */
+            padding: 10px; /* Adjusted padding for better touchability */
+        }
+    }
+    
 
 /*end header section*/
 .slider_section {
@@ -473,93 +535,115 @@ a:focus {
       
  /* web and mobile */
 
-
  .gradient {
         background: linear-gradient(70deg, rgb(126, 103, 207) 0%, rgb(26, 202, 251) 67%);
- }
-
-.trainer_section {
-  background-size: cover;
-  background-attachment: fixed;
-  color: #ffffff;
-}
-
-.trainer_section .container {
-        justify-content: space-between;
-}
-
-.trainer_section .container img {
-        width: 400px;
-}
-.iteam2 {
+      }
+      
+      .trainer_section {
+        background-size: cover;
+        background-attachment: fixed;
+        color: #ffffff;
+      }
+      
+      .trainer_section .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .trainer_section .container img {
+        width: 100%;
+        max-width: 400px; /* Set maximum width */
+      }
+      
+      .iteam2 {
         text-align: center;
         justify-content: center;
         margin-top: 10vh;
-}
-
-.trainer_section .container .iteam2 .playimg img{
-      width: 170px;
-      margin-top: 20px;
-}
-
-
+      }
+      
+      .trainer_section .container .iteam2 .playimg img {
+        width: 100%; /* Make image responsive */
+        max-width: 170px; /* Set maximum width */
+        margin-top: 20px;
+      }
+      
+      /* Media query for mobile devices */
+      @media screen and (max-width: 768px) {
+        .trainer_section .container img {
+          max-width: 300px; /* Adjust maximum width for smaller screens */
+        }
+      
+        .trainer_section .container .iteam2 .playimg img {
+          max-width: 120px; /* Adjust maximum width for smaller screens */
+        }
+      }
+      
 
 
 /* our Blog */
 
 
-
-
 .OurBlog {  
-   padding: 40px;         
-  position: relative;
-  background-color: #ffffff;
-  border-top-left-radius: 50PX;
-  border-top-right-radius: 50PX;
-
-}
-
-.card-container {
+        padding: 20px; /* Decrease padding for smaller screens */       
+        position: relative;
+        background-color: #ffffff;
+        border-top-left-radius: 50PX;
+        border-top-right-radius: 50PX;
+     }
+     
+     .card-container {
         display: flex;
-        align-items: center;
+        flex-wrap: wrap; /* Allow cards to wrap to the next line */
         justify-content: center;
-      }
-      
-.item {
-        width: 300px;
-        margin: 20px;
+     }
+           
+     .item {
+        width: calc(30% - 40px); /* Adjust card width for smaller screens */
+        margin: 10px; /* Decrease margin for smaller screens */
         background-color: #fff;
         box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         transition: transform 0.3s ease;
-
-      }
-      
-      .item:hover {
+     }
+           
+     .item:hover {
         transform: translateY(-5px);
-      }
-      
-      .item img {
+     }
+           
+     .item img {
         width: 100%;
         height: auto;
         overflow: hidden;
-      }
-      
-      .card-info {
+     }
+           
+     .card-info {
         padding: 15px;
-      }
-      
-      .card-info h2 {
+     }
+           
+     .card-info h2 {
         margin-top: 0;
-        margin-bottom: 10px;
-      }
-      
-      .card-info p {
+        margin-bottom: 5px; /* Decrease margin for smaller screens */
+     }
+           
+     .card-info p {
         margin: 0;
-        font-size: 14px;
+        font-size: 12px; /* Decrease font size for smaller screens */
         color: #303030;
-      }
+     }
 
+     @media screen and (max-width: 768px)  {
+        .card-info h2 {
+               font-size: 6PX;
+               font-weight: bold;
+        }
+
+        .card-info p {
+                text-align: center;
+                font-size: 8px;
+        }
+     }
+     
 
 
 .info_section {
