@@ -2,6 +2,11 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #000000;
   background-color: #ffffff;
+box-sizing: border-box;
+width: 100%;
+margin: 0;
+padding: 0;
+overflow-x: hidden;
 }
 
 .layout_padding {
@@ -39,7 +44,6 @@ body {
           justify-content: center;
   text-align: center;
 }
-
 .heading_container h2 {
   font-weight: bold;
   position: relative;

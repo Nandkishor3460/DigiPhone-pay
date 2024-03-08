@@ -12,7 +12,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
 
-        <title>Neogym</title>
+        <title>DIGIPHONE-PAY</title>
 
         <!-- slider stylesheet -->
         <link rel="stylesheet" type="text/css"
@@ -45,7 +45,7 @@
                     
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-                                <div class="col-md-8 d-flex">
+                                <div class="col-md-6 d-flex">
                                         <a class="nav-link" href="tel:+919199096920">
                                             <i class="fa fa-phone"></i> +91 9199096920
                                         </a>
@@ -558,18 +558,33 @@
 
         <script>
                 window.onload = function () {
-                        const container = document.querySelector('.slideshow-container');
-                        const scrollAmount = 1; // Adjust this value to control the scroll speed
-
-                        function scrollImages() {
-                                container.scrollLeft += scrollAmount;
+                    const container = document.querySelector('.slideshow-container');
+                    const scrollAmount = 2; // Adjust this value to control the scroll speed
+                    const scrollDelay = 50; // Adjust the interval for smooth scrolling
+                    let scrollInterval;
+        
+                    function scrollImages() {
+                        container.scrollLeft += scrollAmount;
+                        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+                            container.scrollLeft = 0; // Reset scroll position to the beginning
                         }
-
-                        setInterval(scrollImages, 50); // Adjust the interval for smooth scrolling
+                    }
+        
+                    function startScrolling() {
+                        scrollInterval = setInterval(scrollImages, scrollDelay);
+                    }
+        
+                    function stopScrolling() {
+                        clearInterval(scrollInterval);
+                    }
+        
+                    startScrolling();
+                    
+                    // Pause scrolling on hover
+                    container.addEventListener('mouseenter', stopScrolling);
+                    container.addEventListener('mouseleave', startScrolling);
                 };
-
-
-        </script>
+            </script>
 
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/bootstrap.js"></script>
